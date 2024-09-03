@@ -1,4 +1,74 @@
+/*
+Policy Based DataStructure
 
+Problem
+
+perform the following Q queries on an initially Empty Set.
+
+1 X -> insert X element in the set
+2 X -> Remove X from the set
+3 X -> print No. of elements smaller than X in the current set
+4 X -> print element present at the Xth index in the Current set
+
+constraints
+-10^9 <= X <= 10^9
+1 <= Q <= 10^5
+
+---------------------------------------------------------------------------
+
+Using a Vector
+
+1 X -> insert X element in the set
+O(N) if we want to keep it sorted
+
+finding may take O(log(N)) but for insert O(N)
+
+2 X -> Remove X from the set
+O(N) to remove the element at any arbitrary index
+
+3 X -> print No. of elements smaller than X in the current set
+O(logN) Binary search
+
+4 X -> print element present at the Xth index in the Current set
+O(1) index Acess
+
+let us find the time complexity
+what is we are doing on Q quarries 
+then O(Q) * O(N) it is not good
+
+---------------------------------------------------------------------------
+
+Using a Set
+
+
+1 X -> Insert X element in the set
+O(log(N))
+
+
+2 X -> Remove X from the set
+O(log(N))
+
+3 X -> print No. of elements smaller than X in the current set
+O(N) cannot Binary search on a set
+
+4 X -> print element present at the Xth index in the Current set
+O(N) no concept of index in a set
+
+over all time complexity is O(Q) * O(N)
+
+---------------------------------------------------------------------------
+
+
+Ordered Set to the rescue
+
+provides all the features of a traditional set and additional features 
+
+->finding No. of elements smaller than X in the set 
+A. order_of_key(X) -> O(logN)
+
+->finding the element present at the Xth index in the set 
+*A.find_by_order(X) -> O(logN)
+*/
 
 #include<bits/stdc++.h>
 
